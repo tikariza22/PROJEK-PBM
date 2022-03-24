@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/login_controller.dart';
+import '../controllers/welcome_controller.dart';
 
-class LoginView extends GetView<LoginController> {
+class WelcomeView extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class LoginView extends GetView<LoginController> {
             ),
             SizedBox(height: 30,),
             Text(
-              "Selamat datang",
+              "Selamat Datang",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.normal,

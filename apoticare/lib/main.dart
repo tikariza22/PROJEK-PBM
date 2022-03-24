@@ -6,7 +6,7 @@ void main() {
   runApp(
     GetMaterialApp(
       title: "Application",
-      initialRoute: Routes.LOGIN,
+      initialRoute: Routes.WELCOME,
       getPages: AppPages.routes,
     ),
   );

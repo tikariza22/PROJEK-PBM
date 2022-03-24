@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class LoginController extends GetxController {
-  //TODO: Implement LoginController
+class WelcomeController extends GetxController {
+  //TODO: Implement WelcomeController
 
   final count = 0.obs;
   @override
