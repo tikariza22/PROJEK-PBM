@@ -1,3 +1,4 @@
+import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -56,7 +57,9 @@ class WelcomeView extends GetView<WelcomeController> {
             Container(
               width: Get.width *0.7,
               child: ElevatedButton(
-                onPressed: (){}, 
+                onPressed: (){
+                  Get.toNamed(Routes.LOGIN);
+                }, 
                 child: Text(
                   "Login", 
                   style: TextStyle(
