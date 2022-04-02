@@ -25,38 +25,39 @@ class ProductView extends GetView<ProductController> {
       bottomNavigationBar:
           BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
         BottomNavigationBarItem(
-            icon: Icon(
-              Icons.storefront_outlined,
-              color: Colors.black,
-            ),
-            label: "sadas"),
+          icon: Icon(
+            Icons.storefront_outlined,
+            color: Colors.black,
+          ),
+          label: "Produk",
+        ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.location_on_outlined,
             color: Colors.black,
           ),
-          label: "asdsd",
+          label: "Store loc",
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.qr_code_scanner_outlined,
             color: Colors.black,
           ),
-          label: "asdsd",
+          label: "Barcode",
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.assignment_outlined,
             color: Colors.black,
           ),
-          label: "asdasd",
+          label: "Pesanan",
         ),
         BottomNavigationBarItem(
           icon: Icon(
             Icons.account_circle_outlined,
             color: Colors.black,
           ),
-          label: "asdasd",
+          label: "Profil",
         ),
       ]),
     );
