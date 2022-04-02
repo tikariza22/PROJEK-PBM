@@ -9,8 +9,9 @@ class WelcomeView extends GetView<WelcomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -45,9 +46,11 @@ class WelcomeView extends GetView<WelcomeController> {
               height: 70,
             ),
             Container(
-              width: Get.width * 0.7,
+              width: Get.width * 0.5,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed(Routes.REGISTER);
+                },
                 child: Text("Daftar Akun"),
                 style: ElevatedButton.styleFrom(
                     elevation: 0,
@@ -61,14 +64,17 @@ class WelcomeView extends GetView<WelcomeController> {
               height: 10,
             ),
             Container(
-              width: Get.width * 0.7,
+              width: Get.width * 0.5,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.PRODUCT);
+                  Get.toNamed(Routes.LOGIN);
                 },
                 child: Text(
                   "Login",
-                  style: TextStyle(color: Color(0xff38B0A9)),
+                  style: TextStyle(
+                    color: Color(0xff38B0A9),
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 style: ElevatedButton.styleFrom(
                     elevation: 0,

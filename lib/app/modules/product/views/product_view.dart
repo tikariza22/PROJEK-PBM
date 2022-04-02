@@ -8,33 +8,56 @@ class ProductView extends GetView<ProductController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('ProductView'),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Text("hahahaha"),
-      ),
-      bottomNavigationBar: BottomNavigationBar(items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(
-            Icons.storefront,
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          'SEDAYU APOTEK',
+          style: TextStyle(
             color: Colors.black,
           ),
-          label: "product",
         ),
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+      ),
+      body: Center(),
+      bottomNavigationBar:
+          BottomNavigationBar(type: BottomNavigationBarType.fixed, items: [
         BottomNavigationBarItem(
             icon: Icon(
-              Icons.location_on_outlined,
+              Icons.storefront_outlined,
               color: Colors.black,
             ),
-            label: "lokasi"),
+            label: "sadas"),
         BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code_scanner_outlined), label: "qr scan"),
+          icon: Icon(
+            Icons.location_on_outlined,
+            color: Colors.black,
+          ),
+          label: "asdsd",
+        ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.assignment_outlined), label: "pesanan"),
+          icon: Icon(
+            Icons.qr_code_scanner_outlined,
+            color: Colors.black,
+          ),
+          label: "asdsd",
+        ),
         BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined), label: "profil"),
+          icon: Icon(
+            Icons.assignment_outlined,
+            color: Colors.black,
+          ),
+          label: "asdasd",
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(
+            Icons.account_circle_outlined,
+            color: Colors.black,
+          ),
+          label: "asdasd",
+        ),
       ]),
     );
   }

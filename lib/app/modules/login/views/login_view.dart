@@ -1,3 +1,4 @@
+import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,6 +11,7 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black),
           title: Text(
             'Login Page',
             style: TextStyle(
@@ -24,16 +26,19 @@ class LoginView extends GetView<LoginController> {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
+              SizedBox(
+                height: 40,
+              ),
               Text(
                 "Selamat datang",
-                style: TextStyle(fontSize: 30, color: Color(0xff38B0A9)),
+                style: TextStyle(fontSize: 50, color: Color(0xff38B0A9)),
               ),
               Text(
                 "silahkan masuk akun terlebih dahulu.",
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 40,
+                height: 100,
               ),
               Text(
                 "Email",
@@ -59,9 +64,11 @@ class LoginView extends GetView<LoginController> {
                 height: 20,
               ),
               Container(
-                width: Get.width * 0.7,
+                width: Get.width * 0.5,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(Routes.PRODUCT);
+                  },
                   child: Text("Login"),
                   style: ElevatedButton.styleFrom(
                       elevation: 0,
