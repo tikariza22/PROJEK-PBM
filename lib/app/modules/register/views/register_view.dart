@@ -40,7 +40,7 @@ class RegisterView extends GetView<RegisterController> {
               height: 100,
             ),
             Text(
-              "Email",
+              "Username",
               textAlign: TextAlign.left,
             ),
             TextField(
