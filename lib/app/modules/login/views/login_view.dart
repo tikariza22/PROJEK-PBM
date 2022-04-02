@@ -31,7 +31,7 @@ class LoginView extends GetView<LoginController> {
               ),
               Text(
                 "Selamat datang",
-                style: TextStyle(fontSize: 50, color: Color(0xff38B0A9)),
+                style: TextStyle(fontSize: 30, color: Color(0xff38B0A9)),
               ),
               Text(
                 "silahkan masuk akun terlebih dahulu.",
@@ -79,7 +79,7 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                height: 150,
+                height: 10,
               ),
               Text(
                 "Apoticare @2022",

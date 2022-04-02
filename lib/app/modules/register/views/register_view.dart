@@ -30,14 +30,14 @@ class RegisterView extends GetView<RegisterController> {
             ),
             Text(
               "Selamat datang",
-              style: TextStyle(fontSize: 50, color: Color(0xff38B0A9)),
+              style: TextStyle(fontSize: 30, color: Color(0xff38B0A9)),
             ),
             Text(
               "silahkan masuk akun terlebih dahulu.",
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 100,
+              height: 30,
             ),
             Text(
               "Username",
@@ -85,7 +85,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 60,
             ),
             Text(
               "Apoticare @2022",

@@ -29,7 +29,7 @@ class WelcomeView extends GetView<WelcomeController> {
             Text(
               "Selamat Datang",
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.normal,
                 color: Color(0xff38B0A9),
               ),
@@ -43,7 +43,7 @@ class WelcomeView extends GetView<WelcomeController> {
               style: TextStyle(),
             ),
             SizedBox(
-              height: 70,
+              height: 60,
             ),
             Container(
               width: Get.width * 0.5,
