@@ -1,4 +1,5 @@
 import 'package:apoticare/app/modules/login/views/login_view.dart';
+import 'package:apoticare/app/modules/maps/views/maps_view.dart';
 import 'package:apoticare/app/modules/product/views/product_view.dart';
 import 'package:apoticare/app/modules/profile/views/profile_view.dart';
 import 'package:apoticare/app/modules/register/views/register_view.dart';
@@ -14,7 +15,7 @@ class HomeView extends GetView<HomeController> {
 
   final List<Widget> _widgetOptions = <Widget>[
     ProductView(),
-    ProductView(),
+    MapsView(),
     ProductView(),
     ProductView(),
     ProfileView(),
@@ -63,7 +64,7 @@ class HomeView extends GetView<HomeController> {
                     Icons.assignment_outlined,
                     color: Colors.black,
                   ),
-                  label: "PESANAN"),
+                  label: "TRANSAKSI"),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.account_circle_outlined,
