@@ -12,6 +12,8 @@ import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/register/bindings/register_binding.dart';
 import '../modules/register/views/register_view.dart';
+import '../modules/transaction/bindings/transaction_binding.dart';
+import '../modules/transaction/views/transaction_view.dart';
 import '../modules/welcome/bindings/welcome_binding.dart';
 import '../modules/welcome/views/welcome_view.dart';
 
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.MAPS,
       page: () => MapsView(),
       binding: MapsBinding(),
+    ),
+    GetPage(
+      name: _Paths.TRANSACTION,
+      page: () => TransactionView(),
+      binding: TransactionBinding(),
     ),
   ];
 }
