@@ -3,8 +3,10 @@ import 'package:apoticare/app/modules/maps/views/maps_view.dart';
 import 'package:apoticare/app/modules/product/views/product_view.dart';
 import 'package:apoticare/app/modules/profile/views/profile_view.dart';
 import 'package:apoticare/app/modules/register/views/register_view.dart';
+import 'package:apoticare/app/modules/scanqr/views/scanqr_view.dart';
 import 'package:apoticare/app/modules/transaction/views/transaction_view.dart';
 import 'package:apoticare/app/modules/welcome/views/welcome_view.dart';
+import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -17,7 +19,7 @@ class HomeView extends GetView<HomeController> {
   final List<Widget> _widgetOptions = <Widget>[
     ProductView(),
     MapsView(),
-    ProductView(),
+    ScanqrView(),
     TransactionView(),
     ProfileView(),
   ];
@@ -34,12 +36,17 @@ class HomeView extends GetView<HomeController> {
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
-        actions: const <Widget>[
+        actions: <Widget>[
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.shopping_cart,
-              color: Colors.black,
+            child: IconButton(
+              onPressed: () {
+                Get.toNamed(Routes.CART);
+              },
+              icon: Icon(
+                Icons.shopping_cart,
+                color: Colors.black,
+              ),
             ),
           ),
         ],
@@ -48,43 +55,45 @@ class HomeView extends GetView<HomeController> {
           child: Obx(
         () => _widgetOptions.elementAt(homeC.selectedItem.value),
       )),
-      bottomNavigationBar: Obx(() => BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.storefront_outlined,
-                    color: Colors.black,
-                  ),
-                  label: "PRODUK"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.location_on_outlined,
-                    color: Colors.black,
-                  ),
-                  label: "LOCASI"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.qr_code_scanner_outlined,
-                    color: Colors.black,
-                  ),
-                  label: "SCAN QR"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.assignment_outlined,
-                    color: Colors.black,
-                  ),
-                  label: "TRANSAKSI"),
-              BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.account_circle_outlined,
-                    color: Colors.black,
-                  ),
-                  label: "PROFIL"),
-            ],
-            onTap: homeC.onItemTap,
-            currentIndex: homeC.selectedItem.value,
-          )),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.storefront_outlined,
+                  color: Colors.black,
+                ),
+                label: "PRODUK"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.location_on_outlined,
+                  color: Colors.black,
+                ),
+                label: "LOCASI"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.qr_code_scanner_outlined,
+                  color: Colors.black,
+                ),
+                label: "SCAN QR"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.assignment_outlined,
+                  color: Colors.black,
+                ),
+                label: "TRANSAKSI"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.account_circle_outlined,
+                  color: Colors.black,
+                ),
+                label: "PROFIL"),
+          ],
+          onTap: homeC.onItemTap,
+          currentIndex: homeC.selectedItem.value,
+        ),
+      ),
     );
   }
 }

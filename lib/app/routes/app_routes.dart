@@ -11,6 +11,8 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const MAPS = _Paths.MAPS;
   static const TRANSACTION = _Paths.TRANSACTION;
+  static const CART = _Paths.CART;
+  static const SCANQR = _Paths.SCANQR;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const MAPS = '/maps';
   static const TRANSACTION = '/transaction';
+  static const CART = '/cart';
+  static const SCANQR = '/scanqr';
 }
