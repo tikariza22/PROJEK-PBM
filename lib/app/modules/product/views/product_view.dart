@@ -42,8 +42,8 @@ class ItemCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Container(
-            height: 100,
-            width: 100,
+            height: 70.2,
+            width: 70.2,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/exam2.png"),

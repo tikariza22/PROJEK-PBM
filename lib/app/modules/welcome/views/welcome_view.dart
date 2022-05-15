@@ -24,7 +24,7 @@ class WelcomeView extends GetView<WelcomeController> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 10,
             ),
             Text(
               "Selamat Datang",
@@ -35,7 +35,7 @@ class WelcomeView extends GetView<WelcomeController> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 8,
             ),
             Text(
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
@@ -43,7 +43,7 @@ class WelcomeView extends GetView<WelcomeController> {
               style: TextStyle(),
             ),
             SizedBox(
-              height: 60,
+              height: 20,
             ),
             Container(
               width: Get.width * 0.5,
@@ -61,7 +61,7 @@ class WelcomeView extends GetView<WelcomeController> {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 8,
             ),
             Container(
               width: Get.width * 0.5,
@@ -87,7 +87,7 @@ class WelcomeView extends GetView<WelcomeController> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 8,
             ),
             Text(
               "Apoticare @2022",

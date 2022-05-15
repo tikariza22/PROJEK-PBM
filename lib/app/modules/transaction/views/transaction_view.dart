@@ -29,7 +29,7 @@ class ItemTransaction extends StatelessWidget {
     return ListTile(
       leading: Image.asset(
         "assets/exam2.png",
-        width: 100,
+        width: 70,
       ),
       title: Text(
         "Bodrex Migra",

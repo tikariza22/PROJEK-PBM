@@ -27,7 +27,7 @@ class LoginView extends GetView<LoginController> {
           child: Column(
             children: [
               SizedBox(
-                height: 40,
+                height: 30,
               ),
               Text(
                 "Selamat datang",
@@ -38,7 +38,7 @@ class LoginView extends GetView<LoginController> {
                 textAlign: TextAlign.center,
               ),
               SizedBox(
-                height: 100,
+                height: 50,
               ),
               Text(
                 "Email",
@@ -52,7 +52,7 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               Text("Password"),
               TextField(
@@ -61,7 +61,7 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 15,
               ),
               Container(
                 width: Get.width * 0.5,
@@ -79,7 +79,7 @@ class LoginView extends GetView<LoginController> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 8,
               ),
               Text(
                 "Apoticare @2022",

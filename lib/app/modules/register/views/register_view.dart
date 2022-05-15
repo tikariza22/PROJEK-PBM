@@ -26,7 +26,7 @@ class RegisterView extends GetView<RegisterController> {
         child: Column(
           children: [
             SizedBox(
-              height: 40,
+              height: 8,
             ),
             Text(
               "Selamat datang",
@@ -37,7 +37,7 @@ class RegisterView extends GetView<RegisterController> {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: 30,
+              height: 8,
             ),
             Text(
               "Username",
@@ -51,7 +51,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 8,
             ),
             Text("Email"),
             TextField(
@@ -60,7 +60,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 8,
             ),
             Text("Password"),
             TextField(
@@ -69,7 +69,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               width: Get.width * 0.5,
@@ -85,7 +85,7 @@ class RegisterView extends GetView<RegisterController> {
               ),
             ),
             SizedBox(
-              height: 60,
+              height: 5,
             ),
             Text(
               "Apoticare @2022",
