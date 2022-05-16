@@ -53,7 +53,7 @@ class HomeView extends GetView<HomeController> {
       ),
       body: Center(
           child: Obx(
-        () => _widgetOptions.elementAt(homeC.selectedItem.value),
+        () => _widgetOptions.elementAt(controller.selectedItem.value),
       )),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
@@ -91,7 +91,7 @@ class HomeView extends GetView<HomeController> {
                 label: "PROFIL"),
           ],
           onTap: homeC.onItemTap,
-          currentIndex: homeC.selectedItem.value,
+          currentIndex: controller.selectedItem.value,
         ),
       ),
     );
