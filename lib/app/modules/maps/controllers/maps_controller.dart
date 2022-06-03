@@ -12,6 +12,7 @@ class MapsController extends GetxController {
 
   RxDouble latitude = 0.0.obs;
   RxDouble longitude = 0.0.obs;
+
   late StreamSubscription<Position> streamSubscription;
   final Marker destination = Marker(
     markerId: MarkerId('_destination'),
@@ -57,7 +58,7 @@ class MapsController extends GetxController {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
         // Permissions are denied, next time you could try
-        // requesting permissions again (this is also where
+        // requesting permissions again (this is also where2
         // Android's shouldShowRequestPermissionRationale
         // returned true. According to Android guidelines
         // your App should show an explanatory UI now.

@@ -17,4 +17,7 @@ class CartController extends GetxController {
   @override
   void onClose() {}
   void increment() => count.value++;
+  void decrement() => {
+        if (count.value != 0) {count.value--} else {count.value = 0}
+      };
 }
