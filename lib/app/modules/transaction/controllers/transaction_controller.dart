@@ -6,15 +6,7 @@ class TransactionController extends GetxController {
   // variabel untuk checking
   RxBool checked = false.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {}

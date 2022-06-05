@@ -2,19 +2,17 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../controllers/maps_controller.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 
 class MapsController extends GetxController {
   //TODO: Implement MapsController
-  Completer<GoogleMapController> _controller = Completer();
+  final Completer<GoogleMapController> _controller = Completer();
 
   RxDouble latitude = 0.0.obs;
   RxDouble longitude = 0.0.obs;
 
   late StreamSubscription<Position> streamSubscription;
-  final Marker destination = Marker(
+  final Marker destination = const Marker(
     markerId: MarkerId('_destination'),
     infoWindow: InfoWindow(title: "Apoticare Sedayu"),
     position: LatLng(-8.166812, 113.704216),
@@ -26,10 +24,6 @@ class MapsController extends GetxController {
     getLocation();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {

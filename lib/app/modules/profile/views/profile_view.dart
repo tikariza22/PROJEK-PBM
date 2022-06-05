@@ -18,7 +18,7 @@ class ProfileView extends GetView<ProfileController> {
               decoration: BoxDecoration(
                   border: Border.all(color: Colors.white, width: 4.0),
                   shape: BoxShape.circle,
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Colors.white,
                       spreadRadius: 1,
@@ -26,18 +26,18 @@ class ProfileView extends GetView<ProfileController> {
                       offset: Offset(0, 2),
                     )
                   ],
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage('assets/profil.png'),
                       fit: BoxFit.cover)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "Nama",
               textAlign: TextAlign.left,
             ),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: "Fiki Aviantono",
                 border: OutlineInputBorder(
@@ -45,14 +45,14 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Email",
               textAlign: TextAlign.left,
             ),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: "fiki@mail.unej.ac.id",
                 border: OutlineInputBorder(
@@ -60,14 +60,14 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "Password",
               textAlign: TextAlign.left,
             ),
-            TextField(
+            const TextField(
               decoration: InputDecoration(
                 hintText: "***********",
                 border: OutlineInputBorder(
@@ -75,60 +75,60 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Container(
+                SizedBox(
                   width: Get.width * 0.2,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("Update"),
+                    child: const Text("Update"),
                     style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        primary: Color(0xff42A2FC),
-                        padding: EdgeInsets.symmetric(vertical: 10),
+                        primary: const Color(0xff42A2FC),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                   ),
                 ),
-                SizedBox(width: 10),
-                Container(
+                const SizedBox(width: 10),
+                SizedBox(
                   width: Get.width * 0.2,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("Logout"),
+                    child: const Text("Logout"),
                     style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        primary: Color(0xffB03838),
-                        padding: EdgeInsets.symmetric(vertical: 10),
+                        primary: const Color(0xffB03838),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                   ),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               "For More Information :",
               textAlign: TextAlign.left,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Container(
+            SizedBox(
               width: Get.width * 0.3,
               child: ElevatedButton(
                 onPressed: () {},
-                child: Text("Feedback"),
+                child: const Text("Feedback"),
                 style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    primary: Color(0xff38B0A9),
-                    padding: EdgeInsets.symmetric(vertical: 15),
+                    primary: const Color(0xff38B0A9),
+                    padding: const EdgeInsets.symmetric(vertical: 15),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10))),
               ),

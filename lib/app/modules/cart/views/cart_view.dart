@@ -1,5 +1,5 @@
-import 'dart:developer';
-
+import 'package:apoticare/app/modules/transaction/views/transaction_view.dart';
+import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -12,10 +12,10 @@ class CartView extends GetView<CartController> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          leading: BackButton(
+          leading: const BackButton(
             color: Colors.black,
           ),
-          title: Text(
+          title: const Text(
             'Keranjang',
             style: TextStyle(
               color: Color(0xff38B0A9),
@@ -37,24 +37,24 @@ class CartView extends GetView<CartController> {
                         Container(
                           height: 100,
                           width: 100,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage("assets/exam2.png"),
                                 fit: BoxFit.cover),
                           ),
                         ),
-                        Expanded(child: Text("Bodrex Migra")),
+                        const Expanded(child: Text("Bodrex Migra")),
                         IconButton(
                             onPressed: () {
                               controller.decrement();
                             },
-                            icon: Icon(Icons.remove_circle)),
+                            icon: const Icon(Icons.remove_circle)),
                         Obx(() => Text("${controller.count.value}")),
                         IconButton(
                             onPressed: () {
                               controller.increment();
                             },
-                            icon: Icon(Icons.add_circle)),
+                            icon: const Icon(Icons.add_circle)),
                       ],
                     ),
                   ],
@@ -64,7 +64,8 @@ class CartView extends GetView<CartController> {
             Material(
               elevation: 12,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 17),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 17),
                 height: 84,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,17 +73,23 @@ class CartView extends GetView<CartController> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text("TOTAL"),
                         Text("15.000"),
                       ],
                     ),
-                    Container(
+                    SizedBox(
                         height: 50,
                         width: 146,
                         child: ElevatedButton(
-                          child: Text("cekheout"),
-                          onPressed: () {},
+                          child: const Text("CHECKOUT"),
+                          onPressed: () {
+                            Get.toNamed(Routes.TRANSACTION);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0,
+                            primary: Color(0xff38B0A9),
+                          ),
                         )),
                   ],
                 ),

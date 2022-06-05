@@ -1,11 +1,8 @@
-import 'package:apoticare/app/modules/login/views/login_view.dart';
 import 'package:apoticare/app/modules/maps/views/maps_view.dart';
 import 'package:apoticare/app/modules/product/views/product_view.dart';
 import 'package:apoticare/app/modules/profile/views/profile_view.dart';
-import 'package:apoticare/app/modules/register/views/register_view.dart';
 import 'package:apoticare/app/modules/scanqr/views/scanqr_view.dart';
 import 'package:apoticare/app/modules/transaction/views/transaction_view.dart';
-import 'package:apoticare/app/modules/welcome/views/welcome_view.dart';
 import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 
@@ -38,12 +35,12 @@ class HomeView extends GetView<HomeController> {
         elevation: 0,
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: IconButton(
               onPressed: () {
                 Get.toNamed(Routes.CART);
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.shopping_cart,
                 color: Colors.black,
               ),

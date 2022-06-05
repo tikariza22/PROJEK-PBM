@@ -1,11 +1,12 @@
 import 'package:apoticare/app/routes/app_pages.dart';
+import 'package:apoticare/controller/auth_view_controller.dart';
+import 'package:apoticare/view/loginview.dart';
+import 'package:apoticare/view/register_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/welcome_controller.dart';
-
-class WelcomeView extends GetView<WelcomeController> {
+class WelcomeView extends GetWidget<AuthViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +50,7 @@ class WelcomeView extends GetView<WelcomeController> {
               width: Get.width * 0.5,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.REGISTER);
+                  Get.to(() => RegisterView());
                 },
                 child: const Text("Daftar Akun"),
                 style: ElevatedButton.styleFrom(
@@ -67,7 +68,7 @@ class WelcomeView extends GetView<WelcomeController> {
               width: Get.width * 0.5,
               child: ElevatedButton(
                 onPressed: () {
-                  Get.toNamed(Routes.LOGIN);
+                  Get.to(() => LoginView());
                 },
                 child: const Text(
                   "Login",

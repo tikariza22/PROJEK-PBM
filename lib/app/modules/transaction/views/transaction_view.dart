@@ -9,10 +9,10 @@ class TransactionView extends GetView<TransactionController> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: ListView.builder(
           itemCount: 20,
-          itemBuilder: (context, index) => ItemTransaction(),
+          itemBuilder: (context, index) => const ItemTransaction(),
         ),
       ),
     );
@@ -31,10 +31,10 @@ class ItemTransaction extends StatelessWidget {
         "assets/exam2.png",
         width: 70,
       ),
-      title: Text(
+      title: const Text(
         "Bodrex Migra",
       ),
-      subtitle: Text(
+      subtitle: const Text(
         "12-Sept-2022" "\n sukses",
       ),
     );

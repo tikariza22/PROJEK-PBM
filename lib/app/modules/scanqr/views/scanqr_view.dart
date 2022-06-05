@@ -14,7 +14,7 @@ class ScanqrView extends GetView<ScanqrController> {
         onPressed: () {
           scanqrC.scanQR();
         },
-        child: Text("Scan qr"),
+        child: const Text("Scan qr"),
       ),
     );
   }

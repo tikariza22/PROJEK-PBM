@@ -11,8 +11,8 @@ class LoginView extends GetView<LoginController> {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          title: Text(
+          iconTheme: const IconThemeData(color: Colors.black),
+          title: const Text(
             'Login Page',
             style: TextStyle(
               color: Colors.black,
@@ -26,62 +26,62 @@ class LoginView extends GetView<LoginController> {
           padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-              Text(
+              const Text(
                 "Selamat datang",
                 style: TextStyle(fontSize: 30, color: Color(0xff38B0A9)),
               ),
-              Text(
+              const Text(
                 "silahkan masuk akun terlebih dahulu.",
                 textAlign: TextAlign.center,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
-              Text(
+              const Text(
                 "Email",
                 textAlign: TextAlign.left,
               ),
-              TextField(
+              const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide(color: Colors.black, width: 10),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text("Password"),
-              TextField(
+              const Text("Password"),
+              const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Container(
+              SizedBox(
                 width: Get.width * 0.5,
                 child: ElevatedButton(
                   onPressed: () {
                     Get.toNamed(Routes.HOME);
                   },
-                  child: Text("Login"),
+                  child: const Text("Login"),
                   style: ElevatedButton.styleFrom(
                       elevation: 0,
-                      primary: Color(0xff38B0A9),
-                      padding: EdgeInsets.symmetric(vertical: 15),
+                      primary: const Color(0xff38B0A9),
+                      padding: const EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               ),
-              Text(
+              const Text(
                 "Apoticare @2022",
                 style: TextStyle(
                   color: Color(0xff38B0A9),
