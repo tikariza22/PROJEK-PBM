@@ -1,5 +1,9 @@
 import 'package:apoticare/view/cart_view.dart';
 import 'package:apoticare/view/home_view.dart';
+import 'package:apoticare/view/maps_view.dart';
+import 'package:apoticare/view/profile_view.dart';
+import 'package:apoticare/view/scan_qr_view.dart';
+import 'package:apoticare/view/transaction_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,16 +22,16 @@ class ControlViewCont extends GetxController {
         _currentScreen = HomeView();
         break;
       case 1:
-        _currentScreen = CartView();
+        _currentScreen = MapsView();
         break;
       case 2:
-        _currentScreen = HomeView();
+        _currentScreen = ScanqrView();
         break;
       case 3:
-        _currentScreen = HomeView();
+        _currentScreen = TransactionView();
         break;
       case 4:
-        _currentScreen = HomeView();
+        _currentScreen = ProfileView();
         break;
     }
     update();

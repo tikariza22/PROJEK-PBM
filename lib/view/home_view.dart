@@ -1,86 +1,93 @@
+import 'package:apoticare/view/detail_view.dart';
 import 'package:apoticare/view/loginview.dart';
 import 'package:apoticare/view/welcomeview.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './widget/custom_text.dart';
+
+import '../controller/home_view_controller.dart';
 
 class HomeView extends StatelessWidget {
-  FirebaseAuth _auth = FirebaseAuth.instance;
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GridView.builder(
-        itemCount: 9,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+    return Scaffold(
+      body: GetBuilder<HomeViewController>(
+        init: Get.find<HomeViewController>(),
+        builder: (controller) => SingleChildScrollView(
+          padding:
+              EdgeInsets.only(top: 65.h, bottom: 14.h, right: 16.w, left: 16.w),
+          child: Column(
+            children: [ListViewProducts()],
+          ),
         ),
-        itemBuilder: (context, index) => const ItemCard(),
       ),
     );
-    //   return Scaffold(
-    //       appBar: AppBar(
-    //         title: Text("Home screan"),
-    //       ),
-    //       body: Center(
-    //         child: FlatButton(
-    //             child: Text("Logout"),
-    //             onPressed: () {
-    //               _auth.signOut();
-    //               Get.offAll(() => WelcomeView());
-    //             }),
-    //       ));
   }
 }
 
-class ItemCard extends StatelessWidget {
-  const ItemCard({
-    Key? key,
-  }) : super(key: key);
-
+class ListViewProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(2),
-      padding: const EdgeInsets.all(10),
-      width: Get.height * 0.1,
-      height: 240,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-              color: const Color.fromARGB(255, 223, 223, 223), width: 2)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            height: 70.2,
-            width: 70.2,
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/exam2.png"),
-                fit: BoxFit.cover,
+    return GetBuilder<HomeViewController>(
+      builder: (controller) => Container(
+        height: 320.h,
+        child: ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: controller.products.length,
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Get.to(DetailView(model: controller.products[index]));
+              },
+              child: Container(
+                width: 164.w,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4.r),
+                        color: Colors.white,
+                      ),
+                      height: 240.h,
+                      width: 164.w,
+                      child: Image.network(
+                        controller.products[index].image,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    CustomText(
+                      text: controller.products[index].name,
+                      fontSize: 16,
+                    ),
+                    CustomText(
+                      text: controller.products[index].description,
+                      fontSize: 12,
+                      color: Colors.grey,
+                      maxLines: 1,
+                    ),
+                    CustomText(
+                      text: 'Rp. ${controller.products[index].price}',
+                      fontSize: 16,
+                      color: Colors.blue,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
-          const Text(
-            "Bodrex Migra",
-            style: TextStyle(
-              fontSize: 17,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Text("Meringankan sakit kepala"),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text("Rp. 10.000"),
-              IconButton(
-                  onPressed: () {}, icon: const Icon(Icons.add_circle_rounded))
-            ],
-          )
-        ],
+            );
+          },
+          separatorBuilder: (context, index) {
+            return SizedBox(
+              width: 15.w,
+            );
+          },
+        ),
       ),
     );
   }

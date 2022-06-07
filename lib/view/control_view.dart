@@ -1,4 +1,5 @@
 import 'package:apoticare/controller/auth_view_controller.dart';
+import 'package:apoticare/view/cart_view.dart';
 import 'package:apoticare/view/home_view.dart';
 import 'package:apoticare/view/loginview.dart';
 import 'package:apoticare/view/welcomeview.dart';
@@ -17,7 +18,31 @@ class ControlView extends GetWidget<AuthViewController> {
       return (Get.find<AuthViewController>().user == null)
           ? WelcomeView()
           : GetBuilder<ControlViewCont>(
+              init: ControlViewCont(),
               builder: (controller) => Scaffold(
+                    appBar: AppBar(
+                      title: const Text(
+                        'SEDAYU APOTEK',
+                        style: TextStyle(color: Color(0xff38B0A9)),
+                      ),
+                      centerTitle: true,
+                      backgroundColor: Colors.white,
+                      elevation: 0,
+                      actions: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: IconButton(
+                            onPressed: () {
+                              Get.to(() => CartView());
+                            },
+                            icon: const Icon(
+                              Icons.shopping_cart,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     body: controller.currentScreen,
                     bottomNavigationBar: CustomBottomNavigationBar(),
                   ));

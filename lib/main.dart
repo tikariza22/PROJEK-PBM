@@ -8,7 +8,6 @@ import 'app/routes/app_pages.dart';
 import 'view/control_view.dart';
 import 'view/loginview.dart';
 import 'view/welcomeview.dart';
-
 import 'bindings/binding.dart';
 
 void main() async {
