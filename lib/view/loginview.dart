@@ -1,4 +1,3 @@
-import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:apoticare/view/register_view.dart';
 import 'package:flutter/material.dart';
 

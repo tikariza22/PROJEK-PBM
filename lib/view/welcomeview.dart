@@ -1,4 +1,3 @@
-import 'package:apoticare/app/routes/app_pages.dart';
 import 'package:apoticare/controller/auth_view_controller.dart';
 import 'package:apoticare/view/loginview.dart';
 import 'package:apoticare/view/register_view.dart';

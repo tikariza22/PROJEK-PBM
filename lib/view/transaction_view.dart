@@ -35,7 +35,7 @@ class TransactionView extends StatelessWidget {
                                   ),
                                   CustomText(
                                     text: 'Pesanan Terkirim',
-                                    color: Color.fromARGB(255, 62, 255, 36),
+                                    color: Colors.green,
                                   ),
                                 ],
                               ),
@@ -61,12 +61,12 @@ class TransactionView extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(
-                                    text: 'Total Billed',
+                                    text: 'Total Harga',
                                     color: Colors.green,
                                   ),
                                   CustomText(
                                     text:
-                                        '\$${controller.checkouts[index].totalPrice}',
+                                        'Rp. ${controller.checkouts[index].totalPrice}',
                                     color: Colors.green,
                                   ),
                                 ],
