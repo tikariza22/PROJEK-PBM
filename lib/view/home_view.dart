@@ -34,6 +34,7 @@ class ListViewProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeViewController>(
+      init: HomeViewController(),
       builder: (controller) => Container(
         height: 320.h,
         child: ListView.separated(
