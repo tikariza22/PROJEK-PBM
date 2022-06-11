@@ -9,8 +9,11 @@ class CartViewModel extends GetxController {
   List<CartModel> get cartProducts => _cartProducts;
 
   double _totalPrice = 0;
+  List<String> _totalBarang = [];
 
   double get totalPrice => _totalPrice;
+
+  List<String>? get barang => _totalBarang;
 
   @override
   void onInit() {
@@ -53,6 +56,12 @@ class CartViewModel extends GetxController {
     _totalPrice = 0;
     _cartProducts.forEach((cartProduct) {
       _totalPrice += (double.parse(cartProduct.price) * cartProduct.quantity);
+    });
+  }
+
+  getTotalBarang() {
+    _cartProducts.forEach((cartProduct) {
+      _totalBarang.insert(0, cartProduct.name);
     });
   }
 

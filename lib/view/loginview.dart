@@ -55,7 +55,7 @@ class LoginView extends GetWidget<AuthViewController> {
                 ),
                 CustomTextFormField(
                   title: 'Email',
-                  hintText: 'fiki@gmail.com',
+                  hintText: 'johndoe@gmail.com',
                   keyboardType: TextInputType.emailAddress,
                   validatorFn: (value) {
                     if (value!.isEmpty) return 'Email invalid or not found';
