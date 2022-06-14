@@ -5,11 +5,34 @@ import 'package:get/get.dart';
 import './widget/custom_text.dart';
 import './widget/custom_buttom.dart';
 import 'checkout_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CartView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
+          'KERANJANG',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Expanded(
@@ -19,12 +42,12 @@ class CartView extends StatelessWidget {
                 child: ListView.separated(
                   itemBuilder: (context, index) {
                     return Container(
-                        height: 140,
+                        height: 140.h,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             Container(
-                              width: 140,
+                              width: 140.h,
                               child: Image.network(
                                 controller.cartProducts[index].image,
                                 fit: BoxFit.fill,
@@ -33,17 +56,20 @@ class CartView extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.only(left: 15),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   CustomText(
                                     text: controller.cartProducts[index].name,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 20,
                                   ),
                                   CustomText(
                                     text:
-                                        '${controller.cartProducts[index].price.toString()}',
+                                        'Rp. ${controller.cartProducts[index].price.toString()}',
                                   ),
                                   Container(
                                     width: 140,
-                                    color: Colors.grey,
+                                    color: Color.fromARGB(255, 218, 218, 218),
                                     height: 40,
                                     child: Row(
                                       mainAxisAlignment:
@@ -91,7 +117,10 @@ class CartView extends StatelessWidget {
                                     controller.cartProducts[index].productId);
                               },
                               child: Container(
-                                child: Icon(Icons.delete),
+                                child: Icon(
+                                  Icons.delete,
+                                  color: Colors.red,
+                                ),
                               ),
                             )
                           ],
@@ -108,7 +137,7 @@ class CartView extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(16.h),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

@@ -54,7 +54,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70,
+      height: 70.h,
       child: GetBuilder<ControlViewCont>(
         builder: (controller) => BottomNavigationBar(
           type: BottomNavigationBarType.fixed,

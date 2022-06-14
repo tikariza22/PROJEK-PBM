@@ -20,9 +20,9 @@ class HomeView extends StatelessWidget {
         init: Get.find<HomeViewController>(),
         builder: (controller) => SingleChildScrollView(
           padding:
-              EdgeInsets.only(top: 65.h, bottom: 14.h, right: 16.w, left: 16.w),
+              EdgeInsets.only(top: 16.h, bottom: 16.h, right: 16.w, left: 16.w),
           child: Column(
-            children: [ListViewProducts()],
+            children: [ListViewProducts(), ListViewProducts()],
           ),
         ),
       ),

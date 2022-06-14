@@ -14,43 +14,35 @@ class CheckoutView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
+          'CHECKOUT',
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      backgroundColor: Colors.white,
       body: Column(
         children: [
-          Container(
-            height: 130.h,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 24.h, left: 16.w, right: 16.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    constraints: BoxConstraints(),
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                    ),
-                  ),
-                  CustomText(
-                    text: 'Checkout',
-                    fontSize: 20,
-                    alignment: Alignment.bottomCenter,
-                  ),
-                  Container(
-                    width: 24,
-                  ),
-                ],
-              ),
-            ),
-          ),
           Expanded(
             child: SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 24.h),
+                padding: EdgeInsets.only(
+                    top: 20.h, right: 16.w, left: 16.w, bottom: 24.h),
                 child: Form(
                   key: _formKey,
                   child: GetBuilder<CheckoutViewModel>(

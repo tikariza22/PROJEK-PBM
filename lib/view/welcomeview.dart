@@ -2,6 +2,7 @@ import 'package:apoticare/controller/auth_view_controller.dart';
 import 'package:apoticare/view/loginview.dart';
 import 'package:apoticare/view/register_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 
@@ -11,7 +12,7 @@ class WelcomeView extends GetWidget<AuthViewController> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(30),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
