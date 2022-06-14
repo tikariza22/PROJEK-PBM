@@ -33,14 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// void main() {
-//   runApp(
-//     GetMaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "Application",
-//       initialRoute: Routes.WELCOME,
-//       getPages: AppPages.routes,
-//     ),
-//   );
-// }

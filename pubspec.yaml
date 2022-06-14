@@ -33,5 +33,5 @@ flutter:
   assets:
     - assets/ilus.png
     - assets/profil.png
-    - assets/examples1.png
-    - assets/exam2.png
+    - assets/icons/1.png
+    - assets/icons/2.png
