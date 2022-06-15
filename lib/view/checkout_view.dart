@@ -191,7 +191,7 @@ class ListViewProducts extends StatelessWidget {
                       ),
                       CustomText(
                         text:
-                            '\$${controller.cartProducts[index].price} x ${controller.cartProducts[index].quantity}',
+                            'Rp. ${controller.cartProducts[index].price} x ${controller.cartProducts[index].quantity}',
                         fontSize: 14,
                         color: Colors.green,
                       ),
@@ -219,7 +219,7 @@ class ListViewProducts extends StatelessWidget {
                 color: Colors.grey,
               ),
               CustomText(
-                text: '\$${controller.totalPrice.toString()}',
+                text: 'Rp. ${controller.totalPrice.toString()}',
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
                 color: Colors.green,

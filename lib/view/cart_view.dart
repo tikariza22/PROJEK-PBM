@@ -152,7 +152,7 @@ class CartView extends StatelessWidget {
                     GetBuilder<CartViewModel>(
                         init: Get.find(),
                         builder: (controller) => CustomText(
-                              text: '${controller.totalPrice}',
+                              text: 'Rp. ${controller.totalPrice}',
                             ))
                   ],
                 ),
