@@ -14,6 +14,7 @@ class RegisterView extends GetWidget<AuthViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
@@ -60,7 +61,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   ),
                 ),
                 const SizedBox(
-                  height: 100,
+                  height: 80,
                 ),
                 CustomTextFormField(
                   title: 'Nama',
@@ -102,7 +103,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   },
                 ),
                 const SizedBox(
-                  height: 120,
+                  height: 100,
                 ),
                 CustomButton(
                   'REGISTER',

@@ -22,7 +22,17 @@ class HomeView extends StatelessWidget {
           padding:
               EdgeInsets.only(top: 16.h, bottom: 16.h, right: 16.w, left: 16.w),
           child: Column(
-            children: [ListViewProducts(), ListViewProducts()],
+            children: [
+              ListViewProducts(),
+              SizedBox(
+                height: 15.h,
+              ),
+              ListViewProducts(),
+              SizedBox(
+                height: 15.h,
+              ),
+              ListViewProducts()
+            ],
           ),
         ),
       ),
@@ -86,6 +96,7 @@ class ListViewProducts extends StatelessWidget {
           separatorBuilder: (context, index) {
             return SizedBox(
               width: 15.w,
+              height: 15.w,
             );
           },
         ),

@@ -5,8 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'view/control_view.dart';
-import 'view/loginview.dart';
-import 'view/welcomeview.dart';
 import 'bindings/binding.dart';
 
 void main() async {
@@ -21,8 +19,8 @@ class MyApp extends StatelessWidget {
     return OrientationBuilder(
       builder: (context, orientation) => ScreenUtilInit(
         designSize: orientation == Orientation.portrait
-            ? Size(375, 812)
-            : Size(812, 375),
+            ? const Size(375, 812)
+            : const Size(812, 375),
         builder: (BuildContext, child) => GetMaterialApp(
           initialBinding: Binding(),
           home: ControlView(),

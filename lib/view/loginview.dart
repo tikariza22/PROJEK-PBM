@@ -1,4 +1,5 @@
 import 'package:apoticare/view/register_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -7,7 +8,6 @@ import '../controller/auth_view_controller.dart';
 import './widget/text_form_field.dart';
 import './widget/custom_buttom.dart';
 import './widget/custom_text.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginView extends GetWidget<AuthViewController> {
   final _formKey = GlobalKey<FormState>();
@@ -15,6 +15,7 @@ class LoginView extends GetWidget<AuthViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         appBar: AppBar(
           iconTheme: const IconThemeData(color: Colors.black),
