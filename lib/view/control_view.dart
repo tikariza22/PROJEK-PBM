@@ -81,7 +81,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
                 Icons.location_on_outlined,
                 color: Colors.black,
               ),
-              label: "LOCASI",
+              label: "LOKASI",
               activeIcon: Icon(
                 Icons.location_on_outlined,
                 color: Color(0xff38B0A9),

@@ -47,7 +47,7 @@ class RegisterView extends GetWidget<AuthViewController> {
               children: [
                 CustomText(
                   text: "Buat Akun Baru",
-                  fontSize: 35,
+                  fontSize: 32,
                   alignment: Alignment.center,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff38B0A9),
@@ -60,7 +60,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   alignment: Alignment.center,
                 ),
                 SizedBox(
-                  height: 100.h,
+                  height: 80.h,
                 ),
                 CustomTextFormField(
                   title: 'Nama',
@@ -74,7 +74,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   },
                 ),
                 SizedBox(
-                  height: 20.h,
+                  height: 10.h,
                 ),
                 CustomTextFormField(
                   title: 'Email',
@@ -88,7 +88,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   },
                 ),
                 SizedBox(
-                  height: 20.h,
+                  height: 10.h,
                 ),
                 CustomTextFormField(
                   title: 'Password',
