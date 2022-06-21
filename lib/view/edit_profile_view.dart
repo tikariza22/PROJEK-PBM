@@ -24,225 +24,209 @@ class _EditProfileViewState extends State<EditProfileView> {
         FirebaseAuth.instance.currentUser!.providerData[0].providerId;
 
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 130.h,
-            child: Padding(
-              padding: EdgeInsets.only(bottom: 24.h, left: 16.w, right: 16.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    constraints: BoxConstraints(),
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
-                    ),
-                  ),
-                  CustomText(
-                    text: 'Edit Profile',
-                    fontSize: 20,
-                    alignment: Alignment.bottomCenter,
-                  ),
-                  Container(
-                    width: 24,
-                  ),
-                ],
-              ),
-            ),
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text(
+          'Edit Profil',
+          style: TextStyle(
+            color: Colors.black,
           ),
-          GetBuilder<SelectImageViewModel>(
-            init: SelectImageViewModel(),
-            builder: (controller) => Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding:
-                      EdgeInsets.only(right: 16.w, left: 16.w, bottom: 24.h),
-                  child: Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(16.h),
-                      child: Form(
-                        key: _formKey,
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 60.h,
-                                  backgroundImage:
-                                      AssetImage('assets/profil.png'),
-                                  foregroundImage: controller.imageFile != null
-                                      ? FileImage(controller.imageFile!)
-                                      : null,
-                                ),
-                                SizedBox(
-                                  width: 40.w,
-                                ),
-                                ElevatedButton(
-                                  onPressed: () {
-                                    Get.dialog(
-                                      AlertDialog(
-                                        title: CustomText(
-                                          text: 'Choose option',
-                                          fontSize: 20,
-                                          color: Colors.blue,
-                                        ),
-                                        content: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            Divider(
-                                              height: 1,
-                                            ),
-                                            ListTile(
-                                              onTap: () async {
-                                                try {
-                                                  await controller
-                                                      .cameraImage();
-                                                  Get.back();
-                                                } catch (error) {
-                                                  Get.back();
-                                                }
-                                              },
-                                              title: CustomText(
-                                                text: 'Camera',
-                                              ),
-                                              leading: Icon(
-                                                Icons.camera,
-                                                color: Colors.blue,
-                                              ),
-                                            ),
-                                            Divider(
-                                              height: 1,
-                                            ),
-                                            ListTile(
-                                              onTap: () async {
-                                                try {
-                                                  await controller
-                                                      .galleryImage();
-                                                  Get.back();
-                                                } catch (error) {
-                                                  Get.back();
-                                                }
-                                              },
-                                              title: CustomText(
-                                                text: 'Gallery',
-                                              ),
-                                              leading: Icon(
-                                                Icons.account_box,
-                                                color: Colors.blue,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+        ),
+        elevation: 0,
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      body: Center(
+        child: GetBuilder<SelectImageViewModel>(
+          init: SelectImageViewModel(),
+          builder: (controller) => Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.only(right: 16.w, left: 16.w, bottom: 24.h),
+                child: Card(
+                  child: Padding(
+                    padding: EdgeInsets.all(16.h),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              CircleAvatar(
+                                radius: 60.h,
+                                backgroundImage:
+                                    AssetImage('assets/profil.png'),
+                                foregroundImage: controller.imageFile != null
+                                    ? FileImage(controller.imageFile!)
+                                    : null,
+                              ),
+                              SizedBox(
+                                width: 40.w,
+                              ),
+                              ElevatedButton(
+                                onPressed: () {
+                                  Get.dialog(
+                                    AlertDialog(
+                                      title: CustomText(
+                                        text: 'Choose option',
+                                        fontSize: 20,
+                                        color: Colors.blue,
                                       ),
-                                    );
-                                  },
-                                  child: Text('Select Image'),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 38.h,
-                            ),
-                            CustomTextFormField(
-                              title: 'Name',
-                              hintText: Get.find<ProfileViewController>()
-                                  .currentUser!
-                                  .name,
-                              initialValue: Get.find<ProfileViewController>()
-                                  .currentUser!
-                                  .name,
-                              validatorFn: (value) {
-                                if (value!.isEmpty || value.length < 4)
-                                  return 'Please enter valid name.';
-                              },
-                              onSavedFn: (value) {
-                                Get.find<ProfileViewController>().name = value;
-                              },
-                            ),
-                            SizedBox(
-                              height: 38.h,
-                            ),
-                            Column(
-                              children: [
-                                CustomTextFormField(
-                                  title: 'Email',
-                                  hintText: Get.find<ProfileViewController>()
-                                      .currentUser!
-                                      .email,
-                                  initialValue:
-                                      Get.find<ProfileViewController>()
-                                          .currentUser!
-                                          .email,
-                                  keyboardType: TextInputType.emailAddress,
-                                  validatorFn: (value) {
-                                    if (value!.isEmpty)
-                                      return 'Please enter valid email address.';
-                                  },
-                                  onSavedFn: (value) {
-                                    Get.find<ProfileViewController>().email =
-                                        value;
-                                  },
-                                ),
-                                SizedBox(
-                                  height: 38.h,
-                                ),
-                                CustomTextFormField(
-                                  title: 'Password',
-                                  hintText: '',
-                                  obscureText: true,
-                                  validatorFn: (value) {
-                                    if (value!.isEmpty || value.length < 6)
-                                      return 'Please enter valid password with at least 6 characters.';
-                                  },
-                                  onSavedFn: (value) {
-                                    Get.find<ProfileViewController>().password =
-                                        value;
-                                  },
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 50.h,
-                            ),
-                            _isLoading
-                                ? CircularProgressIndicator()
-                                : CustomButton(
-                                    'SUBMIT',
-                                    () async {
-                                      if (_formKey.currentState!.validate()) {
-                                        setState(() {
-                                          _isLoading = true;
-                                        });
-                                        try {
-                                          await controller
-                                              .uploadImageToFirebase();
-                                          Get.find<ProfileViewController>()
-                                              .picUrl = controller.picUrl;
-                                        } catch (e) {
-                                          Get.find<ProfileViewController>()
-                                                  .picUrl =
-                                              Get.find<ProfileViewController>()
-                                                  .currentUser!
-                                                  .pic;
-                                        }
-                                        _formKey.currentState!.save();
-                                        await Get.find<ProfileViewController>()
-                                            .updateCurrentUser();
-                                        setState(() {
-                                          _isLoading = false;
-                                        });
+                                      content: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                          Divider(
+                                            height: 1,
+                                          ),
+                                          ListTile(
+                                            onTap: () async {
+                                              try {
+                                                await controller.cameraImage();
+                                                Get.back();
+                                              } catch (error) {
+                                                Get.back();
+                                              }
+                                            },
+                                            title: CustomText(
+                                              text: 'Camera',
+                                            ),
+                                            leading: Icon(
+                                              Icons.camera,
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                          Divider(
+                                            height: 1,
+                                          ),
+                                          ListTile(
+                                            onTap: () async {
+                                              try {
+                                                await controller.galleryImage();
+                                                Get.back();
+                                              } catch (error) {
+                                                Get.back();
+                                              }
+                                            },
+                                            title: CustomText(
+                                              text: 'Gallery',
+                                            ),
+                                            leading: Icon(
+                                              Icons.account_box,
+                                              color: Colors.blue,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Text('Select Image'),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 38.h,
+                          ),
+                          CustomTextFormField(
+                            title: 'Name',
+                            hintText: Get.find<ProfileViewController>()
+                                .currentUser!
+                                .name,
+                            initialValue: Get.find<ProfileViewController>()
+                                .currentUser!
+                                .name,
+                            validatorFn: (value) {
+                              if (value!.isEmpty || value.length < 4)
+                                return 'Please enter valid name.';
+                            },
+                            onSavedFn: (value) {
+                              Get.find<ProfileViewController>().name = value;
+                            },
+                          ),
+                          SizedBox(
+                            height: 38.h,
+                          ),
+                          Column(
+                            children: [
+                              CustomTextFormField(
+                                title: 'Email',
+                                hintText: Get.find<ProfileViewController>()
+                                    .currentUser!
+                                    .email,
+                                initialValue: Get.find<ProfileViewController>()
+                                    .currentUser!
+                                    .email,
+                                keyboardType: TextInputType.emailAddress,
+                                validatorFn: (value) {
+                                  if (value!.isEmpty)
+                                    return 'Please enter valid email address.';
+                                },
+                                onSavedFn: (value) {
+                                  Get.find<ProfileViewController>().email =
+                                      value;
+                                },
+                              ),
+                              SizedBox(
+                                height: 38.h,
+                              ),
+                              CustomTextFormField(
+                                title: 'Password',
+                                hintText: '',
+                                obscureText: true,
+                                validatorFn: (value) {
+                                  if (value!.isEmpty || value.length < 6)
+                                    return 'Please enter valid password with at least 6 characters.';
+                                },
+                                onSavedFn: (value) {
+                                  Get.find<ProfileViewController>().password =
+                                      value;
+                                },
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 50.h,
+                          ),
+                          _isLoading
+                              ? CircularProgressIndicator()
+                              : CustomButton(
+                                  'SUBMIT',
+                                  () async {
+                                    if (_formKey.currentState!.validate()) {
+                                      setState(() {
+                                        _isLoading = true;
+                                      });
+                                      try {
+                                        await controller
+                                            .uploadImageToFirebase();
+                                        Get.find<ProfileViewController>()
+                                            .picUrl = controller.picUrl;
+                                      } catch (e) {
+                                        Get.find<ProfileViewController>()
+                                                .picUrl =
+                                            Get.find<ProfileViewController>()
+                                                .currentUser!
+                                                .pic;
                                       }
-                                    },
-                                  ),
-                          ],
-                        ),
+                                      _formKey.currentState!.save();
+                                      await Get.find<ProfileViewController>()
+                                          .updateCurrentUser();
+                                      setState(() {
+                                        _isLoading = false;
+                                      });
+                                    }
+                                  },
+                                ),
+                        ],
                       ),
                     ),
                   ),
@@ -250,7 +234,7 @@ class _EditProfileViewState extends State<EditProfileView> {
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
