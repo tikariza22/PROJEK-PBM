@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
     return OrientationBuilder(
       builder: (context, orientation) => ScreenUtilInit(
         designSize: orientation == Orientation.portrait
-            ? const Size(375, 812)
-            : const Size(812, 375),
+            ? const Size(360, 690)
+            : const Size(690, 360),
         builder: (BuildContext, child) => GetMaterialApp(
           initialBinding: Binding(),
           home: ControlView(),
