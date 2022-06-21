@@ -30,30 +30,27 @@ class LoginView extends GetWidget<AuthViewController> {
           backgroundColor: Colors.white,
         ),
         body: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: EdgeInsets.all(30.h),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                const Text(
-                  "Selamat datang",
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Color(0xff38B0A9),
-                      fontWeight: FontWeight.w500),
+                CustomText(
+                  text: "Silahkan Login",
+                  fontSize: 35,
+                  color: Color(0xff38B0A9),
+                  alignment: Alignment.center,
+                  fontWeight: FontWeight.w500,
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 10.h,
                 ),
-                const Text(
-                  "silahkan masuk akun terlebih dahulu.",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+                CustomText(
+                  text: "Silahkan login ke akun yang sudah ada",
+                  alignment: Alignment.center,
                 ),
-                const SizedBox(
-                  height: 100,
+                SizedBox(
+                  height: 100.h,
                 ),
                 CustomTextFormField(
                   title: 'Email',
@@ -66,8 +63,8 @@ class LoginView extends GetWidget<AuthViewController> {
                     controller.email = value;
                   },
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 20.h,
                 ),
                 CustomTextFormField(
                   title: 'Password',
@@ -80,8 +77,8 @@ class LoginView extends GetWidget<AuthViewController> {
                     controller.password = value;
                   },
                 ),
-                const SizedBox(
-                  height: 120,
+                SizedBox(
+                  height: 150.h,
                 ),
                 CustomButton(
                   'SIGN IN',
@@ -92,8 +89,8 @@ class LoginView extends GetWidget<AuthViewController> {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 20.h,
                 ),
                 const Text(
                   "Apoticare @2022",

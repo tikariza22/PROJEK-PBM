@@ -1,6 +1,8 @@
 import 'package:apoticare/view/loginview.dart';
 import 'package:apoticare/view/welcomeview.dart';
+import 'package:apoticare/view/widget/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:get/get.dart';
 import '../controller/auth_view_controller.dart';
@@ -38,30 +40,27 @@ class RegisterView extends GetWidget<AuthViewController> {
           ),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: EdgeInsets.all(30.h),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
-                const Text(
-                  "Buat Akun Baru",
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Color(0xff38B0A9),
-                      fontWeight: FontWeight.w500),
+                CustomText(
+                  text: "Buat Akun Baru",
+                  fontSize: 35,
+                  alignment: Alignment.center,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff38B0A9),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 20.h,
                 ),
-                const Text(
-                  "Silahkan Membuat Akun Baru",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
+                CustomText(
+                  text: "Silahkan Membuat Akun Baru Anda",
+                  alignment: Alignment.center,
                 ),
-                const SizedBox(
-                  height: 80,
+                SizedBox(
+                  height: 100.h,
                 ),
                 CustomTextFormField(
                   title: 'Nama',
@@ -74,8 +73,8 @@ class RegisterView extends GetWidget<AuthViewController> {
                     controller.name = value;
                   },
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 20.h,
                 ),
                 CustomTextFormField(
                   title: 'Email',
@@ -88,8 +87,8 @@ class RegisterView extends GetWidget<AuthViewController> {
                     controller.email = value;
                   },
                 ),
-                const SizedBox(
-                  height: 15,
+                SizedBox(
+                  height: 20.h,
                 ),
                 CustomTextFormField(
                   title: 'Password',
@@ -102,8 +101,8 @@ class RegisterView extends GetWidget<AuthViewController> {
                     controller.password = value;
                   },
                 ),
-                const SizedBox(
-                  height: 100,
+                SizedBox(
+                  height: 80.h,
                 ),
                 CustomButton(
                   'REGISTER',
@@ -114,8 +113,8 @@ class RegisterView extends GetWidget<AuthViewController> {
                     }
                   },
                 ),
-                const SizedBox(
-                  height: 30,
+                SizedBox(
+                  height: 20.h,
                 ),
                 const Text(
                   "Apoticare @2022",
