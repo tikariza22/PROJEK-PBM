@@ -15,8 +15,8 @@ class Binding extends Bindings {
     Get.lazyPut(() => ControlViewCont());
     Get.lazyPut(() => MapsViewController());
     Get.lazyPut(() => HomeViewController());
-    Get.lazyPut(() => CartViewModel());
+    Get.lazyPut(() => CartViewController());
     Get.lazyPut(() => LocalStorageUser());
-    Get.lazyPut(() => CheckoutViewModel());
+    Get.lazyPut(() => CheckoutViewController());
   }
 }

@@ -100,8 +100,8 @@ class DetailView extends StatelessWidget {
                   SizedBox(
                     height: 5.h,
                   ),
-                  GetBuilder<CartViewModel>(
-                    init: CartViewModel(),
+                  GetBuilder<CartViewController>(
+                    init: CartViewController(),
                     builder: (controller) => Container(
                       child: CustomButton("Tambahkan", () {
                         controller.addProduct(CartModel(

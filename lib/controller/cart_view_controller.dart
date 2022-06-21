@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../services/cart_database.dart';
 import '../../model/cart_model.dart';
 
-class CartViewModel extends GetxController {
+class CartViewController extends GetxController {
   List<CartModel> _cartProducts = [];
 
   List<CartModel> get cartProducts => _cartProducts;

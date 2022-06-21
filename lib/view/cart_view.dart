@@ -36,8 +36,8 @@ class CartView extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: GetBuilder<CartViewModel>(
-              init: Get.put(CartViewModel()),
+            child: GetBuilder<CartViewController>(
+              init: Get.put(CartViewController()),
               builder: (controller) => Container(
                 child: ListView.separated(
                   itemBuilder: (context, index) {
@@ -149,7 +149,7 @@ class CartView extends StatelessWidget {
                     SizedBox(
                       height: 15,
                     ),
-                    GetBuilder<CartViewModel>(
+                    GetBuilder<CartViewController>(
                         init: Get.find(),
                         builder: (controller) => CustomText(
                               text: 'Rp. ${controller.totalPrice}',

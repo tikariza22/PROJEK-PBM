@@ -6,7 +6,7 @@ import '../services/flutter_checkout.dart';
 import '../model/checkout_model.dart';
 import '../controller/cart_view_controller.dart';
 
-class CheckoutViewModel extends GetxController {
+class CheckoutViewController extends GetxController {
   String? name, address, phone;
 
   List<CheckoutModel> _checkouts = [];
@@ -41,10 +41,10 @@ class CheckoutViewModel extends GetxController {
       name: name!,
       address: address!,
       phone: phone!,
-      totalPrice: Get.find<CartViewModel>().totalPrice.toString(),
+      totalPrice: Get.find<CartViewController>().totalPrice.toString(),
       date: DateFormat.yMMMd().add_jm().format(DateTime.now()),
     ));
-    Get.find<CartViewModel>().removeAllProducts();
+    Get.find<CartViewController>().removeAllProducts();
     Get.back();
     _getCheckoutsFromFireStore();
   }

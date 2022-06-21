@@ -45,8 +45,8 @@ class CheckoutView extends StatelessWidget {
                     top: 20.h, right: 16.w, left: 16.w, bottom: 24.h),
                 child: Form(
                   key: _formKey,
-                  child: GetBuilder<CheckoutViewModel>(
-                    init: CheckoutViewModel(),
+                  child: GetBuilder<CheckoutViewController>(
+                    init: CheckoutViewController(),
                     builder: (controller) => Column(
                       children: [
                         ListViewProducts(),
@@ -157,7 +157,7 @@ class CheckoutView extends StatelessWidget {
 class ListViewProducts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CartViewModel>(
+    return GetBuilder<CartViewController>(
       builder: (controller) => Column(
         children: [
           Container(

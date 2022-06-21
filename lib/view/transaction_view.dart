@@ -12,8 +12,8 @@ class TransactionView extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: GetBuilder<CheckoutViewModel>(
-              init: CheckoutViewModel(),
+            child: GetBuilder<CheckoutViewController>(
+              init: CheckoutViewController(),
               builder: (controller) => ListView.separated(
                 itemBuilder: (context, index) {
                   return Padding(
