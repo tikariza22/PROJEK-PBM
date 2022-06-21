@@ -50,7 +50,7 @@ class LoginView extends GetWidget<AuthViewController> {
                   alignment: Alignment.center,
                 ),
                 SizedBox(
-                  height: 100.h,
+                  height: 50.h,
                 ),
                 CustomTextFormField(
                   title: 'Email',
@@ -78,7 +78,7 @@ class LoginView extends GetWidget<AuthViewController> {
                   },
                 ),
                 SizedBox(
-                  height: 150.h,
+                  height: 100.h,
                 ),
                 CustomButton(
                   'SIGN IN',

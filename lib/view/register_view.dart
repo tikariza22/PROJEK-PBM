@@ -60,7 +60,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   alignment: Alignment.center,
                 ),
                 SizedBox(
-                  height: 80.h,
+                  height: 50.h,
                 ),
                 CustomTextFormField(
                   title: 'Nama',
@@ -102,7 +102,7 @@ class RegisterView extends GetWidget<AuthViewController> {
                   },
                 ),
                 SizedBox(
-                  height: 80.h,
+                  height: 50.h,
                 ),
                 CustomButton(
                   'REGISTER',
