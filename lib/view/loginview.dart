@@ -37,7 +37,7 @@ class LoginView extends GetWidget<AuthViewController> {
               children: [
                 CustomText(
                   text: "Silahkan Login",
-                  fontSize: 35,
+                  fontSize: 32,
                   color: Color(0xff38B0A9),
                   alignment: Alignment.center,
                   fontWeight: FontWeight.w500,
