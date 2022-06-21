@@ -41,7 +41,7 @@ class WelcomeView extends GetWidget<AuthViewController> {
                       height: 8,
                     ),
                     const Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod",
+                      "Apoticare Aplikasi Pemesanan Obat tanpa perlu antri",
                       textAlign: TextAlign.center,
                       style: TextStyle(),
                     ),
