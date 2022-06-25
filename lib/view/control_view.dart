@@ -15,7 +15,7 @@ class ControlView extends GetWidget<AuthViewController> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return (Get.find<AuthViewController>().user == null)
+      return Get.find<AuthViewController>().user == null
           ? WelcomeView()
           : GetBuilder<ControlViewCont>(
               init: ControlViewCont(),
